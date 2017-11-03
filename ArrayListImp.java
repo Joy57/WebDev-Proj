@@ -11,6 +11,10 @@ Info(String name, String phone) {
 	this.name = name;
 	this.phone = phone;
 }
+public void setInfo(String name, String phone) {
+    this.name = name;
+    this.phone = phone;
+}
 
 }
 
@@ -20,9 +24,7 @@ public class ArrayListImp {
 	static ArrayList<Info> list = new ArrayList<Info>();
 	static Scanner reader = new Scanner(System.in);
 public static void main(String[] args) {
-// ArrayList<String> list = new ArrayList<String>();
-	
-	
+		
 	int choice = 0; 
 	
 	do {
@@ -32,7 +34,9 @@ public static void main(String[] args) {
 		System.out.println("1. Insert");
 		System.out.println("2. Display");
 		System.out.println("3. Delete");
-		System.out.println("4. EXIT");
+		System.out.println("4. Update");
+		System.out.println("5. EXIT");
+		System.out.print("Enter here: ");
 		String temp = reader.nextLine();
 		 
 		choice = Integer.parseInt(temp);//scan
@@ -45,8 +49,7 @@ public static void main(String[] args) {
 		case 3: delete();
 		break;
 		case 4: update();
-		default:
-		System.out.println("Program terminated");
+		break;
 		}
 		}while (choice !=5);
 		 
@@ -54,15 +57,16 @@ public static void main(String[] args) {
 
 }
 static void printArray(){
-	//System.out.println("Here's the list:'\n'");
+
+	System.out.println();
 	if(list.size()>0){
-		System.out.println("Here's the list:\n--------------------");	
+		System.out.println("Here's the full list:\n---------------------------");	
 	}
 	for (int i = 0; i < list.size(); i++) {
 	System.out.print(i+". "+list.get(i).name + " | " + list.get(i).phone+"\n");
 	}
 	if (list.size() >0){
-		System.out.println("--------------------");		
+		System.out.println("---------------------------");		
 	}
 }
 static void insert(){
@@ -72,9 +76,9 @@ static void insert(){
 	 
 	for (int i = 0; i < 1; i++) {
 	String name, phone;
-	System.out.println("Insert Name : ");
+	System.out.print("Insert Name : ");
 	name = scanner.nextLine();
-	System.out.println("Insert Phone : ");
+	System.out.print("Insert Phone : ");
 	phone = scanner.nextLine();
 	 
 	Info info = new Info(name, phone);
@@ -82,17 +86,6 @@ static void insert(){
 	 
 	}
 	 
-	 
-//	for (int i = 0; i < list.size(); i++) {
-//	System.out.println(list.get(i).name + " " + list.get(i).phone);
-//	}
-//	 
-//	int index = scanner.nextInt();
-//	list.remove(index);
-//	 
-//	for (int i = 0; i < list.size(); i++) {
-//	System.out.println(list.get(i));
-//	}
 }
 
 static void display(){
@@ -100,13 +93,15 @@ static void display(){
 	System.out.print("Insert the index to display: ");
 
 	int index = scanner.nextInt();
-	System.out.println(list.get(index).name+" "+list.get(index).phone);
-	System.out.println();
-//	for (int i = 0; i < list.size(); i++) {
-//	System.out.println(list.get(i));
-//	}
-//	
-	
+	if (list.isEmpty()){
+		System.out.println("List is empty");
+	}
+	else{
+	System.out.println("---------------------------------");
+	System.out.println("-> "+index+". "+list.get(index).name+" "+list.get(index).phone);
+	System.out.println("---------------------------------");
+	}
+	System.out.println();	
 	
 }
 static void delete(){
@@ -117,9 +112,27 @@ static void delete(){
 }
 
 static void update(){
+
+	Scanner scanner = new Scanner(System.in);
+	String name, phone;
 	
-}
-
-
+	if (list.isEmpty()){
+		System.out.println("List is empty");
+	}
+	else{
+	System.out.println("Update Info");
+	
+	System.out.print("Insert Name : ");
+	name = scanner.nextLine();
+	System.out.print("Insert Phone : ");
+	phone = scanner.nextLine();
+	
+	System.out.println("Index: ");
+	int index = scanner.nextInt();
+	
+	Info info = new Info(name, phone);
+	list.set(index, info);
+	}
+ }
 
 }
