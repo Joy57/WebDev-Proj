@@ -1,0 +1,15 @@
+ {
+  "name": "npm_proj",
+  "version": "1.0.0",
+  "description": "use npm packages to build proj",
+  "main": "bot.js",
+  "scripts": {
+    "start":"node bot.js",  
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joy",
+  "license": "ISC",
+  "dependencies":{
+     "twit":"^2.2.9"
+     }
+}
