@@ -1,3 +1,0 @@
-Grouping content 
-<div> block level element. It takes up its own line just like paragraph does.
-<span> inline container. 
