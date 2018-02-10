@@ -18,7 +18,7 @@ export class LikeComponent{
         //     this.isSelected = true; //and set isSelected to true
 
         // }
-        //these two lines summarizes the above logic into two lines
+        //these two lines simplifies the above codes
         //a cleaner implementation
         this.likesCount += (this.isSelected)? -1: +1;
         this.isSelected = !this.isSelected;
