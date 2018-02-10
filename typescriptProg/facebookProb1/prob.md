@@ -1,4 +1,4 @@
-#**Exercise**
+<h1>**Exercise**</h1>
 
 ###**Background** 
 Imagine you're working at Facebook and your job is to implement the "Like" functionality. 
