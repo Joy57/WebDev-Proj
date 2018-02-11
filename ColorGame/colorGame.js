@@ -42,16 +42,19 @@ hardBtn.addEventListener("click", function(){
 
 resetButton.addEventListener("click", function(){
     //generate all new colors
-    colors = generateRandomColors(numOfSq);
+    colors = generateRandomColors(numOfSq );
     //pick a new random color from array
     pickedColor = pickColor();
     //change colorDisplay to match picked color
     colorDisplay.textContent = pickedColor;
+    this.textContent ="New Colors";
+    messageDisplay.textContent = "";
+
     //change colors of squares
     for (var i = 0; i<squares.length; i++){
         squares[i].style.backgroundColor = colors[i];
     }
-    h1.style.backgroundColor ="#232323";
+    h1.style.backgroundColor ="steelblue";
 });
 
 
