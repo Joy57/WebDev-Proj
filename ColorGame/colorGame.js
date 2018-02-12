@@ -5,7 +5,7 @@ var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 
-var h1 = document.querySelector("h1");
+var h1 = document.querySelector("#top");
 var resetButton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
@@ -79,7 +79,7 @@ for (var i = 0; i < squares.length; i++){
         else {
             //fade the wrong color out
             this.style.backgroundColor = "#232323";   
-            messageDisplay.textContent = "Try Again";     
+            messageDisplay.textContent = "Nope!";     
         } 
     });
 }
@@ -119,4 +119,6 @@ function generateRandomColors (num){
         //"rgb (r, g, b)"
         return "rgb(" + r + ", " + g + ", " + b + ")";
     }
+
+
 
