@@ -9,7 +9,6 @@ var h1 = document.querySelector("#top");
 var resetButton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
-
 easyBtn.addEventListener("click", function(){
     easyBtn.classList.add("selected");
     hardBtn.classList.remove("selected");
