@@ -16,12 +16,17 @@ import { Component } from '@angular/core';
 export class CoursesComponent{
     //define a field to hold title of the page
     title = "List of courses";
-    
+    courses;
     //define a method to get some value
     // getTitle(){
     //     return this.title;
     // }
 
     //list of courses
-    courses = ["course1", "course2", "course3"];
+    // courses = ["course1", "course2", "course3"];
+
+    //Logic for calling an HTTP service
+
+
+
 }
