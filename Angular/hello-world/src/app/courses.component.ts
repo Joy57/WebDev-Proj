@@ -18,6 +18,7 @@ export class CoursesComponent{
     //define a field to hold title of the page
     title = "List of courses";
     courses;
+
     //define a method to get some value
     // getTitle(){
     //     return this.title;
