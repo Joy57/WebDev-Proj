@@ -12,7 +12,7 @@ import { CoursesService } from './course/courses.service';
   declarations: [
     AppComponent,
     CoursesComponent,
-    CourseComponent
+    CourseComponent 
   ],
   imports: [
     BrowserModule

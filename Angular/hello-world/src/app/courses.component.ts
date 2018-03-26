@@ -29,7 +29,7 @@ export class CoursesComponent{
     //Logic for calling an HTTP service
 
 
-    constructor(service: CoursesService){
+    constructor(service: CoursesService) { 
         // let service = new CoursesService();
         this.courses = service.getCourses();
     }
