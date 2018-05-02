@@ -12,8 +12,8 @@ def lambda_handler(event, context):
     print('Selected voice: '+voice)
     
     #creating new record in dynamoDB table
-    dynamoDB = boto3.resource('dynamoDB')
-    table = dynamoDB.Table(os.environ['DB_TABLE_NAME'])
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table(os.environ['DB_TABLE_NAME'])
     table.put_item(
         Item={
             'id' : recordId,
