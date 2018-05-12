@@ -11,3 +11,7 @@ Each campgrounds will have:
 #layout and basic styling
 * Create header and footer partials
 * Add in Bootstrap
+
+# style the campground pages
+* Add a better header/title
+* Make campgrounds display in a grid
