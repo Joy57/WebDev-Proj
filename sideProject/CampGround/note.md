@@ -15,3 +15,7 @@ Each campgrounds will have:
 # style the campground pages
 * Add a better header/title
 * Make campgrounds display in a grid
+
+# style navbar and form
+* add a navbar to all templates
+* style the new campground form
