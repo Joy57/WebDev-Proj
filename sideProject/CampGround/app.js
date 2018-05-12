@@ -11,7 +11,8 @@ mongoose.connect ("mongodb://localhost/my_camp");
 //SCHEMA
 var campgroundSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema);
@@ -36,6 +37,7 @@ app.get("/", function(req, res){
     res.render("landing");
 });
 
+//INDEX --SHOW ALL CAMPS
 //this page displays all campgrounds
 app.get("/campgrounds", function(req, res){
     //get campgrounds from database
@@ -44,18 +46,20 @@ app.get("/campgrounds", function(req, res){
             console.log(err);
         }
         else{
-            res.render("campgrounds",{camps:allCampgrounds});
+            res.render("index",{camps:allCampgrounds});
         }
     });
 });
 
+//CREATE --ROUTE add new camp to database
 //logic of making new campground and redirect
 app.post("/campgrounds", function(req, res){
     // res.send("POST ROUTE");
     //get data from form and add to campgrounds array
     var name = req.body.name;
     var image = req.body.image;
-    var newCampground = {name: name, image: image}
+    var desc = req.body.description;
+    var newCampground = {name: name, image: image, description: desc}
     //create new campground and save to database
     Campground.create(newCampground, function(err, createdCampground){
             if(err){
@@ -71,9 +75,27 @@ app.post("/campgrounds", function(req, res){
     // re-direct back to the campgrounds page
     // res.redirect("/campgrounds");
 });
+//NEW -- show form to create new camps
 //form
 app.get("/campgrounds/new", function(req, res){
     res.render("new");
+}); 
+
+//SHOW --shows more info about a campground
+app.get("/campgrounds/:id", function(req, res){
+    //find the camp with provided ID
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if(err){
+            console.log(err);
+        }
+        else{
+            //render show template with that campground
+            res.render("show", {camps:foundCampground});
+        }
+    });
+    // req.params.id
+    // //render show template with that campground
+    // res.render("show");
 });
 
 //listener
