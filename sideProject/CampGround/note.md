@@ -19,3 +19,7 @@ Each campgrounds will have:
 # style navbar and form
 * add a navbar to all templates
 * style the new campground form
+
+# add mongoose
+* setup campground model
+* use campground model inside routes
