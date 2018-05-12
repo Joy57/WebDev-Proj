@@ -30,11 +30,12 @@ Each campgrounds will have:
 * add a show route/template
 
 RESTful routes
-name    URL             Verb    Description
--------------------------------------------------------------------
-Index   /profile        GET     Display a list of all profiles
-NEW     /profile/new    GET     Display form to create new profile
-CREATE  /profile        POST    Add new profile to DB
-SHOW    /profile/:id       GET     Shows info about one dog
+--------------
+name   | URL          |   Verb  |  Description
+-------|--------------|---------|-------------------------------------
+Index  | /profile     |   GET   |  Display a list of all profiles
+NEW    | /profile/new |   GET   |  Display form to create new profile
+CREATE | /profile     |   POST  |  Add new profile to DB
+SHOW   | /profile/:id |   GET   |  Shows info about one dog
 
 
