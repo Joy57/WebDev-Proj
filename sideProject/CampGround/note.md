@@ -39,3 +39,11 @@ CREATE | /profile     |   POST  |  Add new profile to DB
 SHOW   | /profile/:id |   GET   |  Shows info about one dog
 
 
+# Refactor mongoose code
+* create a models directory
+* Use module.exports
+* Require everything correctly
+
+# Add seeds file
+* add a seeds.js file
+* run the seeds file every time the server starts
